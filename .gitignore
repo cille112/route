@@ -1,0 +1,111 @@
+﻿# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]evelopment/
+[Dd]ebugDownloads/
+[Dd]ebugSymbols/
+[Dd]ebugFiles/
+[Dd]ebugPublic/
+
+# Build directories
+[Dd]ebug/
+[Dd]ebug/netcoreapp*
+[Dd]ebug/net5.0/
+[Dd]ebug/net6.0/
+[Dd]ebug/net7.0/
+
+# Generated files
+*.compiled
+*.bak
+*.backup
+*.tmp
+*.temp
+
+# Build output
+/bin/
+/obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# User-specific files for VS Code
+*.code-workspace
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NPM packages
+node_modules/
+
+# Build artifacts
+wwwroot/lib/
+
+# MacOS
+.DS_Store
+*.swp
+
+# Windows
+Desktop.ini
+
+# Linux
+*~
+
+# JetBrains Rider
+.idea/
+
+# User-specific files for JetBrains Rider
+.idea/*
+.idea/.idea_modules
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/misc.xml
+.idea/libraries
+.idea/antTasks
+
+# Windows: Exclude Visual Studio config files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Windows: Windows 10/11 specific files
+Thumbs.db
+ehthumbs.db
+*.bak
+*.backup
+
+# Azure DevOps
+.vs2019/
+
+# End of .gitignore for .NET Core
