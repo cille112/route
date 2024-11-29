@@ -20,3 +20,8 @@ A stop should have a name, latitude and longitude.
 
 The response of the route is a list in order of the route. 
 
+## Assumptions
+I made som eassumption during the task.
+- The distance is the same from A->B and B->A
+- Route optimization is done only one distance not time since I assumed that the longer the distance the longer the time
+- An adress is a point with langitude and longitude, not actual stress adress. (For simplicity)
