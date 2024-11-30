@@ -38,14 +38,12 @@ public class RoutesController : ControllerBase
 		Console.WriteLine(_stop);
 		try
 		{
-			var dist = await _routeOptimizationService.GetDistanceAndDurationAsync(_stop);
-			Console.WriteLine(dist.Count);
-			return Ok();
+			var route = await _routeOptimizationService.GetRouteAsync(_stop);
+			return Ok(route);
 			
 		}
 		catch (Exception ex) 
 		{
-			Console.WriteLine(ex);
 			return BadRequest($"Could not calculate: {ex.Message}");
 		}
 	}

@@ -25,3 +25,6 @@ I made som eassumption during the task.
 - The distance is the same from A->B and B->A
 - Route optimization is done only one distance not time since I assumed that the longer the distance the longer the time
 - An adress is a point with langitude and longitude, not actual stress adress. (For simplicity)
+- The first stop is the start where the truck is located. 
+- The truck should not go back to start but can ed in a different location
+- That it is possible to get to every stop from every stop. 

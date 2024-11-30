@@ -4,7 +4,7 @@ namespace Routes.Services
 {
     public interface IGoogleRoutesApiService
     {
-		Task<RouteResponse> GetRouteAsync(Point origin, Point destination);
+		Task<GoogleRouteReponse> GetRouteAsync(Point origin, Point destination);
 
 	}
 }
