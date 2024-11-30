@@ -15,7 +15,7 @@ namespace Routes.Services
 		{
 			_configuration = configuration;
 			_httpClient = httpClientFactory.CreateClient();
-			_apiKey = configuration["GoogleApiKey"];
+			_apiKey = _configuration["GoogleApiKey"];
 		}
 
 		public async Task<GoogleRouteReponse> GetRouteAsync(Point origin, Point destination)
@@ -51,10 +51,16 @@ namespace Routes.Services
 
 			if (!response.IsSuccessStatusCode)
 			{
-				throw new Exception("Error in getting distance from google api");
+				throw new Exception($"Error in getting distance from google api: {response.StatusCode}");
 			}
 
+
 			string jsonResponse = await response.Content.ReadAsStringAsync();
+
+			if (string.IsNullOrWhiteSpace(jsonResponse))
+			{
+				throw new Exception("Route API returned an empty response.");
+			}
 			var jsonDocument = JsonDocument.Parse(jsonResponse);
 			var route = jsonDocument.RootElement
 									 .GetProperty("routes")[0];

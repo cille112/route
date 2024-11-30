@@ -23,20 +23,25 @@ namespace Routes.Services
 			{
 				for (int j = 0; j < stops.Count; j++)
 				{
-					if (i != j)
-					{
-						try
-						{
-							var element = await _googleRouteApiService.GetRouteAsync(stops[i].point, stops[j].point);
-
-							distancesAndDurations[(stops[i].name, stops[j].name)] = element.Distance;
-
-						}
-						catch (Exception)
-						{
-							throw new BadHttpRequestException("Could not get response from Google API");
-						}
+					if (i == j)
+					{ 
+						break;
 					}
+					
+					try
+					{
+						var element = await _googleRouteApiService.GetRouteAsync(stops[i].point, stops[j].point);
+
+						distancesAndDurations[(stops[i].name, stops[j].name)] = element.Distance;
+						distancesAndDurations[(stops[j].name, stops[i].name)] = element.Distance;
+
+
+					}
+					catch (Exception ex)
+					{
+						throw new BadHttpRequestException($"Could not get response from Google API: {ex.Message}");
+					}
+					
 				}
 			}
 			return distancesAndDurations;

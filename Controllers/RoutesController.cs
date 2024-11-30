@@ -28,6 +28,16 @@ public class RoutesController : ControllerBase
 			return BadRequest("Could not add point, since it's empty ");
 		}
 
+		if (!ModelState.IsValid)
+		{
+			return BadRequest(ModelState);
+		}
+
+		if (_stop.Any(s => s.name.Equals(request.name, StringComparison.OrdinalIgnoreCase)))
+		{
+			return Conflict($"A stop with the name '{request.name}' already exists.");
+		}
+
 		_stop.Add(request);
 		return Ok();
 	}
