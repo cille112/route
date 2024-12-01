@@ -1,0 +1,38 @@
+[
+	{
+		"Name": "Rosenborg Castle",
+		"point": {
+			"Latitude": 55.6864,
+			"Longitude": 12.5775
+		}
+	},
+	{
+		"Name": "Amalienborg Palace",
+		"point": {
+			"Latitude": 55.6839,
+			"Longitude": 12.5931
+		}
+	},
+	{
+		"Name": "Frederiksborg Castle",
+		"point": {
+			"Latitude": 55.9354,
+			"Longitude": 12.2996
+		}
+	},
+	{
+		"Name": "Kronborg Castle",
+		"point": {
+			"Latitude": 56.0392,
+			"Longitude": 12.6215
+		}
+	},
+
+	{
+		"Name": "Christiansborg Palace",
+		"point": {
+			"Latitude": 55.6756,
+			"Longitude": 12.5793
+		}
+	}
+]

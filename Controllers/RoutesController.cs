@@ -23,11 +23,6 @@ public class RoutesController : ControllerBase
 	[HttpPost("point")]
 	public async Task<IActionResult> AddPoint([FromBody] Stop request)
 	{
-		if (request == null)
-		{
-			return BadRequest("Could not add point, since it's empty ");
-		}
-
 		if (!ModelState.IsValid)
 		{
 			return BadRequest(ModelState);
@@ -39,6 +34,27 @@ public class RoutesController : ControllerBase
 		}
 
 		_stop.Add(request);
+		return Ok();
+	}
+
+	[HttpPost("all_points")]
+	public async Task<IActionResult> AddAllPoints([FromBody] List<Stop> request)
+	{
+		if (!ModelState.IsValid)
+		{
+			return BadRequest(ModelState);
+		}
+
+		foreach (var stop in request)
+		{
+			if (_stop.Any(s => s.name.Equals(stop.name, StringComparison.OrdinalIgnoreCase)))
+			{
+				return Conflict($"A stop with the name '{stop.name}' already exists.");
+			}
+
+			_stop.Add(stop);
+		}
+
 		return Ok();
 	}
 
