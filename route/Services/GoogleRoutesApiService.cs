@@ -43,10 +43,6 @@ namespace Routes.Services
 			request.Headers.Add("X-Goog-Api-Key", _apiKey );
 			request.Headers.Add("X-Goog-FieldMask", "routes.duration,routes.distanceMeters");
 
-			var serializedPayload = JsonSerializer.Serialize(requestPayload, new JsonSerializerOptions { WriteIndented = true });
-			Console.WriteLine("Request Payload:");
-			Console.WriteLine(serializedPayload);
-
 			var response = await _httpClient.SendAsync( request );
 
 			if (!response.IsSuccessStatusCode)

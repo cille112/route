@@ -18,14 +18,25 @@ or follow the steps below:
 - `cd ..`
 - `dotnet test`
 
-Now the API is running.
+Now the API is running at http://localhost:5034/.
 
 There are three endpoints:
-1. One for adding a new stop
-1. One for adding a list of stops
-1. One for calculating the route
+1. One for adding a new stop /point
+1. One for adding a list of stops /all_points_
+1. One for calculating the route /route
 
-A stop should have a name, and a point that contains latitude and longitude.
+A stop should have a name, and a point that contains latitude and longitude, example:
+
+`
+{
+    "name": "s1", 
+    "point":
+    {
+    "latitude": "38.439734",
+    "longitude": "-122.0827784"
+    }
+}
+`
 
 The response of the route is a list in order of the route. 
 
