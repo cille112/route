@@ -2,15 +2,23 @@
 
 To run the code make sure you have an api key for the Google route api.
 
+- `dotnet user-secrets init`
+- `dotnet user-secrets set "GoogleApiKey" "{API_KEY}"`
+
+There are two options to run the code, either open the solution in visual studio and press f5
+or follow the steps below:
+
 ## Steps: 
 - Clone the repo.
+- `cd route\route`
 - `dotnet restore`
-- `dotnet user-secrets init`
-- `dotnet user-secrets set "GoogleApiKey" "{}API_KEY"`
 - `dotnet run`
 
+## Test steps
+- `cd ..`
+- `dotnet test`
 
-Now the API is running. A swagger site should open such that the endpoints in the API can be seen.
+Now the API is running.
 
 There are three endpoints:
 1. One for adding a new stop
@@ -20,7 +28,6 @@ There are three endpoints:
 A stop should have a name, and a point that contains latitude and longitude.
 
 The response of the route is a list in order of the route. 
-
 
 Use postman or similar to test the functionality, a list of stops that can be used is located in the list.json file.
 

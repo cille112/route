@@ -61,10 +61,10 @@ public class RoutesController : ControllerBase
 	[HttpGet("route")]
 	public async Task<IActionResult> GetRoute()
 	{
-		Console.WriteLine(_stop);
 		try
 		{
-			var route = await _routeOptimizationService.GetRouteAsync(_stop);
+			var distancematrix = await _routeOptimizationService.GetDistanceAsync(_stop);
+			var route = _routeOptimizationService.GetRoute(distancematrix, _stop);
 			return Ok(route);
 			
 		}

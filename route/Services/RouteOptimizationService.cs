@@ -47,12 +47,10 @@ namespace Routes.Services
 			return distancesAndDurations;
         }
 
-		public async Task<RouteResponse> GetRouteAsync(List<Stop> stops)
+		public RouteResponse GetRoute(Dictionary<(string, string), int> distanceMatrix, List<Stop> stops)
 		{
 			try
 			{
-				var distanceMatrix = await GetDistanceAsync(stops);
-
 				var stopIndex = 0;
 
 				var route = new List<String>();
