@@ -12,13 +12,17 @@ To run the code make sure you have an api key for the Google route api.
 
 Now the API is running. A swagger site should open such that the endpoints in the API can be seen.
 
-There are two endpoints:
+There are three endpoints:
 1. One for adding a new stop
+1. One for adding a list of stops
 1. One for calculating the route
 
-A stop should have a name, latitude and longitude.
+A stop should have a name, and a point that contains latitude and longitude.
 
 The response of the route is a list in order of the route. 
+
+
+Use postman or similar to test the functionality, a list of stops that can be used is located in the list.json file.
 
 ## Assumptions
 I made som eassumption during the task.
